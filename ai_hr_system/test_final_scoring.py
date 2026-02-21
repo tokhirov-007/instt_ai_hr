@@ -63,7 +63,7 @@ def test_final_scoring():
     )
     
     print("\n--- Testing Rockstar Senior ---")
-    breakdown = score_engine.aggregate(summary, integrity, q_data)
+    breakdown = score_engine.aggregate(summary, integrity, q_data, cv_skills=["python", "kubernetes"], confidence_level="high")
     final_score = score_engine.calculate_final_weighted_score(breakdown, "hard")
     decision, reason = rec_engine.get_recommendation(final_score, breakdown, [])
     
@@ -89,7 +89,7 @@ def test_final_scoring():
     )
     
     print("\n--- Testing Suspect Expert ---")
-    breakdown_suspect = score_engine.aggregate(summary, integrity_low, q_data)
+    breakdown_suspect = score_engine.aggregate(summary, integrity_low, q_data, cv_skills=["python", "kubernetes"], confidence_level="low")
     final_score_suspect = score_engine.calculate_final_weighted_score(breakdown_suspect, "hard")
     decision_suspect, reason_suspect = rec_engine.get_recommendation(final_score_suspect, breakdown_suspect, ["HIGH_RISK_OF_CHEATING"])
     

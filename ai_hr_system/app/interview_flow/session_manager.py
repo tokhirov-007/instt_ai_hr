@@ -15,6 +15,7 @@ import json
 from app.notifications.dispatcher import NotificationDispatcher
 from app.notifications.logger import NotificationLogger
 from app.database import SessionLocal
+from sqlalchemy.orm.attributes import flag_modified
 from app.models import Candidate, SessionModel
 from app.answer_analysis.ai_detector import AIDetector
 from app.interview_flow.schemas import SessionStatus as SessionStatusEnum
@@ -225,6 +226,7 @@ class SessionManager:
                 answer_dict = json.loads(answer.json())
                 current_answers.append(answer_dict)
                 db_session.answers = current_answers
+                flag_modified(db_session, "answers")
                 db_session.current_question_index += 1
                 db.commit()
         except Exception as e:

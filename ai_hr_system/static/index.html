@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <div id="bg-triangles"></div>
     <div id="app" class="glass-container">
         <!-- Step 1: CV Upload & Language -->
         <div id="step-upload" class="step-card">
@@ -80,6 +81,24 @@
         </div>
     </div>
     <script src="/static/js/app.js?v=6.1"></script>
+    <script>
+        // Generate flying green triangles
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.getElementById('bg-triangles');
+            const numTriangles = 25;
+            for (let i = 0; i < numTriangles; i++) {
+                const tri = document.createElement('div');
+                tri.classList.add('triangle');
+                tri.style.left = `${Math.random() * 100}vw`;
+                tri.style.animationDelay = `${Math.random() * 10}s`;
+                tri.style.animationDuration = `${10 + Math.random() * 15}s`;
+                // Randomize size slightly
+                const scale = 0.5 + Math.random() * 1.5;
+                tri.style.setProperty('--scale', scale);
+                container.appendChild(tri);
+            }
+        });
+    </script>
 </body>
 
 </html>
