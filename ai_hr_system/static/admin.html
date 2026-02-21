@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI HR - Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=6.2">
+    <style>
+        .ai-badge {
+            background: #ff4757;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 8px;
+        }
+
+        .fast-type-badge {
+            background: #ffa502;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+
+<body class="admin-body">
+    <main class="admin-main">
+        <header class="admin-header">
+            <div>
+                <h1 id="admin-title">Кандидаты</h1>
+                <p id="admin-subtitle">Управление потоком найма <span
+                        style="font-size: 0.7rem; opacity: 0.6;">v6.2</span></p>
+            </div>
+            <div class="lang-switcher">
+                <button onclick="switchAdminLang('ru')" id="btn-admin-ru" class="active">RU</button>
+                <button onclick="switchAdminLang('uz')" id="btn-admin-uz">UZ</button>
+            </div>
+        </header>
+
+        <section class="candidate-list">
+            <table id="candidates-table">
+                <thead>
+                    <tr>
+                        <th id="th-candidate">Candidate</th>
+                        <th id="th-phone">Phone</th>
+                        <th id="th-email">Email</th>
+                        <th id="th-lang">Lang</th>
+                        <th id="th-date">Date</th>
+                        <th id="th-status">Status</th>
+                        <th id="th-score">Score</th>
+                        <th id="th-actions">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="candidates-body">
+                    <!-- Dynamic Rows -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <div id="qa-modal" class="modal-overlay hidden">
+        <div class="modal-content glass">
+            <div class="modal-header">
+                <h3>История ответов / Interview Q&A</h3>
+                <button onclick="closeModal()" class="close-btn">&times;</button>
+            </div>
+            <div id="qa-content" class="modal-body">
+                <!-- Q&A content here -->
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/admin.js?v=6.2"></script>
+</body>
+
+</html>

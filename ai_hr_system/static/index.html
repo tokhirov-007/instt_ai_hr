@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI HR - Candidate Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=6.1">
+</head>
+
+<body>
+    <div id="app" class="glass-container">
+        <!-- Step 1: CV Upload & Language -->
+        <div id="step-upload" class="step-card">
+            <h1>UFT AI HR</h1>
+
+            <div class="form-group">
+                <label for="lang-select">Choose Language:</label>
+                <select id="lang-select" onchange="updateUI()">
+                    <option value="en">English</option>
+                    <option value="ru">Русский</option>
+                    <option value="uz">O'zbekcha</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="candidate-name" id="lbl-name">Full Name:</label>
+                <input type="text" id="candidate-name" placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+                <label for="candidate-phone" id="lbl-phone">Phone Number:</label>
+                <input type="tel" id="candidate-phone" value="+998">
+            </div>
+
+            <div class="form-group">
+                <label for="candidate-email" id="lbl-email">Email Address:</label>
+                <input type="email" id="candidate-email" placeholder="john@example.com">
+            </div>
+
+            <div class="file-upload">
+                <span id="file-name-display" class="file-name" style="display: block; margin-bottom: 8px;"></span>
+                <input type="file" id="cv-file" accept=".pdf,.docx" style="display: none;"
+                    onchange="handleFileSelect()">
+                <label for="cv-file" class="btn secondary" id="lbl-upload">Select CV (PDF/DOCX)</label>
+            </div>
+
+            <button onclick="startProcessing()" class="btn primary" id="btn-start">Start Interview</button>
+        </div>
+
+        <!-- Step 2: Processing -->
+        <div id="step-loading" class="step-card hidden">
+            <div class="loader"></div>
+            <p id="loading-text">Analyzing your CV...</p>
+        </div>
+
+        <!-- Step 3: Interview Question -->
+        <div id="step-interview" class="step-card hidden">
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+            <h2 id="question-text">Question Loading...</h2>
+            <div class="timer" id="timer">Time Remaining: --:--</div>
+            <textarea id="answer-text" placeholder="Type your answer here..."></textarea>
+            <button onclick="submitAnswer()" class="btn primary" id="btn-submit">Submit Answer</button>
+        </div>
+
+        <!-- Step 4: Final Screen -->
+        <div id="step-final" class="step-card hidden">
+            <h1 id="final-title">Thank You!</h1>
+            <p id="final-msg">We have received your interview. We will contact you soon.</p>
+            <div class="success-icon">
+                <svg viewBox="0 0 24 24" width="60" height="60" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" style="color: #10B981;">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/app.js?v=6.1"></script>
+</body>
+
+</html>

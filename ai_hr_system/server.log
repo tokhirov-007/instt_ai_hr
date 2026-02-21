@@ -1,0 +1,10 @@
+INFO:     Will watch for changes in these directories: ['/mnt/d/UFT_Company/HR_AI_MA/clone/AI_HR_MA/ai_hr_system']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [11050] using WatchFiles
+Starting AI HR System API...
+INFO:     Started server process [11119]
+INFO:     Waiting for application startup.
+/mnt/d/UFT_Company/env/lib/python3.12/site-packages/spacy/util.py:910: UserWarning: [W095] Model 'en_core_web_sm' (3.8.0) was trained with spaCy v3.8.0 and may not be 100% compatible with the current version (3.7.2). If you see errors or degraded performance, download a newer compatible model or retrain your custom model with the current spaCy version. For more details and available updates, run: python -m spacy validate
+  warnings.warn(warn_msg)
+/mnt/d/UFT_Company/env/lib/python3.12/site-packages/librosa/util/files.py:10: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
