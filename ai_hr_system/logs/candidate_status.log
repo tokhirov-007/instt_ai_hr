@@ -113,3 +113,7 @@
 {"timestamp": "2026-02-21T15:15:55.298688", "event": "status_change", "candidate_id": "1f4985bb-50e1-4da0-a2b0-5a0b5346c467", "from": "INVITED", "to": "INVITED", "actor": "ADMIN"}
 {"timestamp": "2026-02-21T15:15:57.274375", "event": "notification_sent", "candidate_id": "1f4985bb-50e1-4da0-a2b0-5a0b5346c467", "channel": "EMAIL", "target_status": "REJECTED", "result": "SUCCESS"}
 {"timestamp": "2026-02-21T15:15:58.906302", "event": "notification_sent", "candidate_id": "1f4985bb-50e1-4da0-a2b0-5a0b5346c467", "channel": "EMAIL", "target_status": "INVITED", "result": "SUCCESS"}
+{"timestamp": "2026-02-22T10:49:09.457052", "event": "status_change", "candidate_id": "0b7b46e8-b239-408f-a7a4-573222e48b9c", "from": "PENDING", "to": "rejected", "actor": "ADMIN"}
+{"timestamp": "2026-02-22T10:49:09.457361", "event": "status_change", "candidate_id": "0b7b46e8-b239-408f-a7a4-573222e48b9c", "from": "UNDER_REVIEW", "to": "rejected", "actor": "ADMIN_PUBLIC"}
+{"timestamp": "2026-02-22T10:49:09.619613", "event": "status_change", "candidate_id": "0b7b46e8-b239-408f-a7a4-573222e48b9c", "from": "rejected", "to": "rejected", "actor": "ADMIN"}
+{"timestamp": "2026-02-22T10:49:12.769514", "event": "notification_sent", "candidate_id": "0b7b46e8-b239-408f-a7a4-573222e48b9c", "channel": "EMAIL", "target_status": "rejected", "result": "SUCCESS"}
